@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<h1>Holita mundo</h1>);
+function Welcome() {
+    return <h1>Hello, Sergio</h1>;
+  }
+  
+  const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
+
+  root.render(
+
+    <Welcome/>
+   );
