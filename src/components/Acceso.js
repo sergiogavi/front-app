@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-export function Saludo() {
+export default function Acceso() {
   return (
-<h1>holasss</h1>
+<h1>Acceso</h1>
   );
 }
 

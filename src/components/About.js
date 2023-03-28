@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-export function Saludo2() {
+export default function about() {
   return (
-<h1>hoddddddddlasss</h1>
+<h1>About</h1>
   );
 }
 

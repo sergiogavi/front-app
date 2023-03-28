@@ -29,10 +29,14 @@ li a:hover:not(.active) {
   background-color:whitesmoke;
 }
 
-li img{
+li img#logo{
   width: 70px;
   height: 70px;
 }
 .active {
   background-color: #04aa6d;
+}
+
+nav{
+  margin-left:  -31.5px;
 }
