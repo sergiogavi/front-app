@@ -5,13 +5,14 @@ import Home from "./components/Home";
 import About from "./components/About";
 import NoPage from "./components/NoPage";
 import Acceso  from "./components/Acceso";
+import Comunicate from "./components/Comunicate";
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Comunicate />} />
           <Route path="/acceso" element={<Acceso />} />
           <Route path="*" element={<NoPage />} />
         </Route>
