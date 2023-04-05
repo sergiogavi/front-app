@@ -8,11 +8,6 @@ export default function Comunicate() {
   .then((response) => {
     var myArr = JSON.parse(response);
       console.log(response);
-   /*   myArr.forEach(element => {
-        nombreDef=document.getElementById("demo").innerHTML = element.nombre; 
-        console.log(element.nombre);
-        document.getElementById("demo").innerHTML = element.nombre; 
-      });*/
        
       var tbody = document.getElementById('demo');
       tbody.innerHTML = "";

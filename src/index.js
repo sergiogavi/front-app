@@ -6,18 +6,24 @@ import About from "./components/About";
 import NoPage from "./components/NoPage";
 import Acceso  from "./components/Acceso";
 import Comunicate from "./components/Comunicate";
+import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
+import Drawer from "./components/Drawer";
+import MenuOptions from "./components/PrimarySearchAppBar";
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+
+<BrowserRouter>
+<PrimarySearchAppBar />
+    <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/about" element={<Comunicate />} />
+          <Route path="/usuarios" element={<Comunicate />} />
           <Route path="/acceso" element={<Acceso />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    
   );
 }
 

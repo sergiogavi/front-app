@@ -1,8 +1,10 @@
+
 export default function Comunicate() {
  
   return (
     <div className="Comunicate">
-     <h1>Home Page</h1>
+     <h1>Nombre APP</h1>
+
     </div>
   );
 }
