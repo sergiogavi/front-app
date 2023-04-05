@@ -1,0 +1,16 @@
+#formularioLogin{
+    text-align: center;
+    padding-top: 14%;
+
+}
+
+#formularioLogin Button{
+    background-color: transparent;
+    padding-top: 5%;
+}
+
+#formularioLogin button :hover{
+    background-color: #1976d2;
+    color: white;
+}
+

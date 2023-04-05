@@ -12,6 +12,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import '../styles/login.css';
 var nombre="user";
 export default function Login() {
  
@@ -59,10 +60,12 @@ export default function Login() {
   return (
 <h1>Login</h1>,
 
-<div>
+<div id="formularioLogin" >
 <form className={classes.root} noValidate autoComplete="off">
 <TextField id="txtEmail" label="Email" />
+<br/>
 <TextField id="txtPassword" type="password" label="Password" />
+<br/>
 <Button onClick={checkUser}>Login</Button>
 </form>
 </div>
