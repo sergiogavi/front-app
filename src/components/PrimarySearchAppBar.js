@@ -16,8 +16,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Layout from "./Layout";
+
 import { Outlet, Link } from "react-router-dom";
 import '../menuSuperior.css';
+var nombre= window.localStorage.getItem('email');
 /* 
  Componente que contiene el menú superior de la web 
 
@@ -47,7 +49,8 @@ const MenuOptions = () => {
       <nav >
             <Link to="/" >Home</Link>
             <Link to="/usuarios" >Usuarios</Link>
-            <Link to="/acceso" >Acceso</Link>
+            <Link to="/login" >Login</Link>
+            {nombre}
       </nav>
       </div>
       <Outlet />
@@ -197,7 +200,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-           <h1 className="font-link">NombreAPP</h1>
+           <h1 className="font-link">ForoBate</h1>
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -207,7 +210,7 @@ export default function PrimarySearchAppBar() {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> 
           <MenuOptions></MenuOptions>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -216,6 +219,7 @@ export default function PrimarySearchAppBar() {
                 <MailIcon />
               </Badge>
             </IconButton>
+           
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
