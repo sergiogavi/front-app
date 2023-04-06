@@ -8,19 +8,25 @@ background-color: #1976d2;
 
 nav a{
   color: white;
-}
 
+}
 #linkpos a{
 background-color: #1976d2;
   width: 210px;
   text-align: center;
   padding-top: inherit;
   font-size: large;
+
 }
 
 
 #linkpos a:hover{
   background-color: #ffffff;
 color: #1976d2;
+
   }
+
+#linkpos{
+  padding-left: 4%;
+}
 

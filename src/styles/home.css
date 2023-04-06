@@ -1,0 +1,11 @@
+h1#homepage{
+ text-align: center;
+ padding-top: 3%;
+ color:#1976d2;
+ font-size: 70px;
+}
+
+p{
+    text-align: center;
+    font-size: large;
+}
