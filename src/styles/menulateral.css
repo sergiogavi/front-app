@@ -2,3 +2,10 @@
    display: none;
    width: fit-content;
 }
+.opciones{
+position:relative;
+padding-top: 3%;
+background-color:#1976d2;
+color: white;  
+
+}
