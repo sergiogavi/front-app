@@ -1,0 +1,56 @@
+#formulario{
+    text-align: center;
+    padding-top: 5%;
+    
+}
+
+#formulario Button{
+    background-color: transparent ;
+    margin-top: 2%;
+}
+
+#formulario button :hover{
+    background-color: #1976d2;
+    color: white;
+}
+
+li{
+    margin-top: 2%;
+  text-align: center;
+    list-style-type: none;
+
+}
+
+li a{
+    background-color: white;
+    color: #1976d2;
+}
+
+
+li a:hover{
+    background-color: #1976d2;
+    color: white;
+    font-size: larger;
+}
+
+input{
+    background-color: #1976d2;
+    color: #1976d2;
+}
+
+input:active{
+    background-color: #1976d2;
+    color: white;
+}
+
+input::first-line{
+  
+    color: #1976d2;
+}
+
+
+img{
+    width: fit-content;
+    height:fit-content;
+   
+}

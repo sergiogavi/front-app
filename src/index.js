@@ -8,6 +8,7 @@ import Login  from "./components/Login";
 import Comunicate from "./components/Comunicate";
 import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import MenuOptions from "./components/PrimarySearchAppBar";
+import Register from "./components/Register";
 export default function App() {
   return (
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/usuarios" element={<Comunicate />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

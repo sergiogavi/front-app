@@ -12,7 +12,8 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import '../styles/login.css';
+import '../styles/loginRegister.css';
+import { Outlet, Link } from "react-router-dom";
 var nombre="user";
 export default function Login() {
  
@@ -58,15 +59,28 @@ export default function Login() {
 
   const classes = useStyles();
   return (
+    
 <h1>Login</h1>,
 
-<div id="formularioLogin" >
-<form className={classes.root} noValidate autoComplete="off">
+<div id="formulario" className="font-menu">
+<img id="logo"
+          src={require('../img/bate.png')} 
+          alt="logo" 
+        />
+        <br/>
+        <br/>
+        <br/>
+<form className={classes.root} noValidate autoComplete="off" className="font-menu">
 <TextField id="txtEmail" label="Email" />
 <br/>
 <TextField id="txtPassword" type="password" label="Password" />
 <br/>
-<Button onClick={checkUser}>Login</Button>
+<Button className="font-menu" onClick={checkUser}>Login</Button>
+<nav>
+
+        <li><Link to='/register'>¿Todavía no tienes cuenta? Registrate!</Link></li>
+
+    </nav>
 </form>
 </div>
   );
