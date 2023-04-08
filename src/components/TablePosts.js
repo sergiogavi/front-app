@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,95 +14,101 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import "../styles/menulateral.css";
-function refreshMessages() {
-  const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+import AbreHilo from './AbreHilo';
 
-  return Array.from(new Array(50)).map(
-    () => messageExamples[getRandomInt(messageExamples.length)],
-  );
-}
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+
+var rowDef;
+let nombreDef;
+
 
 export default function TablePosts() {
-  const [value, setValue] = React.useState(0);
-  const ref = React.useRef(null);
-  const [messages, setMessages] = React.useState(() => refreshMessages());
 
-  React.useEffect(() => {
-    ref.current.ownerDocument.body.scrollTop = 0;
-    setMessages(refreshMessages());
-  }, [value, setMessages]);
 
-  return (
+
+
+  fetch("http://localhost:8080/api/getHilos")
+  .then(response => response.text())
+  .then((response) => {
+
+    var myArr = JSON.parse(response);
+
+      console.log(response);
+       
+      var tbody = document.getElementById('demoHilo');
+
+      tbody.innerHTML = "";
+
+
+
+
+     
+    for (var i = 0; i < myArr.length; i++) {
+
+      var tr = "<tr>";
+      var b="<b>";
+      var c="<i>";
+
+      var bt="<button id=\"" + i >"Saber más ";
+      tr +=bt+= b+= myArr[i].id + "</b></td></tr><br/></button>";
+      tr += b+= myArr[i].nombre + "</b></td></tr><br/>";
+      tr += c+= myArr[i].titulo + "</i></td></tr><br/>";
+      tr +=c+= myArr[i].mensaje + "</i></td></tr>";
+      tr += "<hr>";
+      
+      tbody.innerHTML += tr;
+      
+    }      
+   })
+    .catch(err => console.log(err))
     
-    <Box sx={{ pb: 7 }} ref={ref}>
-      <CssBaseline />
-      <Paper className="opciones">
-        <BottomNavigation 
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        >
-          <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-          <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
-        
-        </BottomNavigation>
-      </Paper>
-      <List>
-        {messages.map(({ primary, secondary, person }, index) => (
-          <ListItem button key={index + person}>
-            <ListItemAvatar>
-              <Avatar alt="Profile Picture" src={person} />
-            </ListItemAvatar>
-            <ListItemText primary={primary} secondary={secondary} />
-          </ListItem>
-        ))}
-      </List>
 
-    </Box>
-  );
+
+
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+  var rows = [
+    //createData('United States', 'US', "327167434", "9833520"),
+  ];
+
+
+
+   return (
+     <div>
+          
+      <table className="font-menu" >
+      <tr>
+    <td id="demoHilo" ></td>
+  </tr>
+      </table>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+
+</div>
+  )
 }
 
-const messageExamples = [
-  {
-    primary: 'Brunch this week?',
-    secondary: "I'll be in the neighbourhood this week. Let's grab a bite to eat",
-    person: '/static/images/avatar/5.jpg',
-  },
-  {
-    primary: 'Birthday Gift',
-    secondary: `Do you have a suggestion for a good present for John on his work
-      anniversary. I am really confused & would love your thoughts on it.`,
-    person: '/static/images/avatar/1.jpg',
-  },
-  {
-    primary: 'Recipe to try',
-    secondary: 'I am try out this new BBQ recipe, I think this might be amazing',
-    person: '/static/images/avatar/2.jpg',
-  },
-  {
-    primary: 'Yes!',
-    secondary: 'I have the tickets to the ReactConf for this year.',
-    person: '/static/images/avatar/3.jpg',
-  },
-  {
-    primary: "Doctor's Appointment",
-    secondary: 'My appointment for the doctor was rescheduled for next Saturday.',
-    person: '/static/images/avatar/4.jpg',
-  },
-  {
-    primary: 'Discussion',
-    secondary: `Menus that are generated by the bottom app bar (such as a bottom
-      navigation drawer or overflow menu) open as bottom sheets at a higher elevation
-      than the bar.`,
-    person: '/static/images/avatar/5.jpg',
-  },
-  {
-    primary: 'Summer BBQ',
-    secondary: `Who wants to have a cookout this weekend? I just got some furniture
-      for my backyard and would love to fire up the grill.`,
-    person: '/static/images/avatar/1.jpg',
-  },
-];
+
+
