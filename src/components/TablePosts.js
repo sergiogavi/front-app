@@ -15,7 +15,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import "../styles/menulateral.css";
 import AbreHilo from './AbreHilo';
-
+import Button from '@material-ui/core/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -23,92 +23,57 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-
-var rowDef;
-let nombreDef;
+import { useNavigate } from "react-router-dom"
+import $ from 'jquery';
+import linq from "linq";
 
 
 export default function TablePosts() {
 
 
 
-
   fetch("http://localhost:8080/api/getHilos")
   .then(response => response.text())
   .then((response) => {
-
-    var myArr = JSON.parse(response);
-
-      console.log(response);
-       
-      var tbody = document.getElementById('demoHilo');
-
-      tbody.innerHTML = "";
-
-
-
-
-     
-    for (var i = 0; i < myArr.length; i++) {
-
-      var tr = "<tr>";
-      var b="<b>";
-      var c="<i>";
-
-      var bt="<button id=\"" + i >"Saber más ";
-      tr +=bt+= b+= myArr[i].id + "</b></td></tr><br/></button>";
-      tr += b+= myArr[i].nombre + "</b></td></tr><br/>";
-      tr += c+= myArr[i].titulo + "</i></td></tr><br/>";
-      tr +=c+= myArr[i].mensaje + "</i></td></tr>";
-      tr += "<hr>";
-      
-      tbody.innerHTML += tr;
-      
-    }      
-   })
-    .catch(err => console.log(err))
     
+    var myArr = JSON.parse(response);
+    console.log(response);
+     
+    var tbody = document.getElementById('demo');
+
+    tbody.innerHTML = "";
+
+  for (var i = 0; i < myArr.length; i++) {
+    var tr = "<tr>";
+    tr += "<td ></td>" + "<a href='www.google.es'>" +" "+ myArr[i].id + "</a></tr>";
+    tr += "<td>Nombre : </td>" + "<td>" + myArr[i].nombre + "</td></tr>";
+    tr += "<td>Titulo : </td>" + "<td>" + myArr[i].titulo + "</td></tr>";
+    tr += "<td>Mensaje : </td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
+    tr += "<hr></div>";
+    tbody.innerHTML +=tr; 
+}  
+
+const tbl = document.getElementById('demo');
+tbl.addEventListener('click', event => {
+  const el = event.target;
+ console.log(`you clicked "${el.innerText}"`);
+
+});
+})
+.catch(err => console.log(err))
+// listen for all 'click' events within table
 
 
+return (
+  <div className="Comunicate">
+<table>
 
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+<tbody id="demo">
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
+</tbody>
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-  var rows = [
-    //createData('United States', 'US', "327167434", "9833520"),
-  ];
+</table>
 
-
-
-   return (
-     <div>
-          
-      <table className="font-menu" >
-      <tr>
-    <td id="demoHilo" ></td>
-  </tr>
-      </table>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-
-</div>
-  )
+  </div>
+);
 }
-
-
-
