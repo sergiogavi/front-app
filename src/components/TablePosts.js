@@ -26,7 +26,26 @@ import TableRow from '@mui/material/TableRow';
 import { useNavigate } from "react-router-dom"
 import $ from 'jquery';
 import linq from "linq";
+import HiloX from './HiloX';
+import { Outlet, Link } from "react-router-dom";
+import Register from './Register';
 
+var ideDefinitivo;
+
+
+function setId(ide){
+ // console.log(ide);
+  ideDefinitivo=ide;
+}
+
+function getId(){
+ 
+  let text = ideDefinitivo.toString();
+  console.log("getID: "+text);
+  return text;
+}
+
+export var ideDefinitivo;
 
 export default function TablePosts() {
 
@@ -45,7 +64,8 @@ export default function TablePosts() {
 
   for (var i = 0; i < myArr.length; i++) {
     var tr = "<tr>";
-    tr += "<td ></td>" + "<a href='www.google.es'>" +" "+ myArr[i].id + "</a></tr>";
+    var ide="myArr[i].id";
+    tr += "<td ></td>" + "<a href='/hilox'>"+myArr[i].id+ "</Link></tr>";
     tr += "<td>Nombre : </td>" + "<td>" + myArr[i].nombre + "</td></tr>";
     tr += "<td>Titulo : </td>" + "<td>" + myArr[i].titulo + "</td></tr>";
     tr += "<td>Mensaje : </td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
@@ -53,11 +73,14 @@ export default function TablePosts() {
     tbody.innerHTML +=tr; 
 }  
 
+
 const tbl = document.getElementById('demo');
 tbl.addEventListener('click', event => {
   const el = event.target;
- console.log(`you clicked "${el.innerText}"`);
-
+ console.log(`"${el.innerText}"`);
+ localStorage.setItem("id",el.innerText);
+  setId(el.innerText);
+   ideDefinitivo=getId();
 });
 })
 .catch(err => console.log(err))

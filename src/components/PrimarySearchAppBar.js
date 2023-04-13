@@ -50,6 +50,7 @@ const MenuOptions = () => {
             <Link to="/" >Home</Link>
             <Link to="/usuarios" >Usuarios</Link>
             <Link to="/login" >Login</Link>
+            <Link to="/hilox"></Link>
       <a id="nombre">{nombre}</a>
       </nav>
    
