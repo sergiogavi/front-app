@@ -89,7 +89,10 @@ tbl.addEventListener('click', event => {
 
 return (
   <div className="Comunicate">
-<table>
+<nav>
+        <li><Link to='/hilonuevo'>Crea tu propio hilo</Link></li>
+    </nav>
+<table className='font-menu'>
 
 <tbody id="demo">
 

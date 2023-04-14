@@ -10,6 +10,7 @@ import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import MenuOptions from "./components/PrimarySearchAppBar";
 import Register from "./components/Register";
 import HiloX from "./components/HiloX";
+import HiloNuevo from "./components/HiloNuevo";
 export default function App() {
   return (
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/hilox" element={<HiloX />} />
+          <Route path="/hilonuevo" element ={<HiloNuevo />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

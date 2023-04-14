@@ -14,10 +14,7 @@ export default function Comunicate() {
 
     for (var i = 0; i < myArr.length; i++) {
       var tr = "<tr>";
-      tr += "<td>ID</td>" + "<td>" + myArr[i].id + "</td></tr>";
       tr += "<td>Nombre : </td>" + "<td>" + myArr[i].nombre + "</td></tr>";
-      tr += "<td>apellido : </td>" + "<td>" + myArr[i].apellido + "</td></tr>";
-      tr += "<td>telefono : </td>" + "<td>" + myArr[i].telefono + "</td></tr>";
       tr += "<td>email : </td>" + "<td>" + myArr[i].email + "</td></tr>";
       tr += "<hr>";
       tbody.innerHTML += tr;

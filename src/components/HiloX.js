@@ -5,6 +5,7 @@ import { Outlet, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import ListItemText from '@mui/material/ListItemText';
 import { TextField, TextareaAutosize } from '@material-ui/core';
+import '../styles/hilox.css';
 export default function HiloX() {
     var idToSearch=localStorage.getItem("id");
     var EmailUser=localStorage.getItem("email");
@@ -22,10 +23,9 @@ export default function HiloX() {
    
       for (var i = 0; i < myArr.length; i++) {
         var tr = "<tr >";
-        tr += "<td>ID</td>" + "<td>" + myArr[i].id + "</td></tr>";
-        tr += "<td>Nombre : </td>" + "<td>" + myArr[i].nombre + "</td></tr>";
-        tr += "<td>titulo : </td>" + "<td>" + myArr[i].titulo + "</td></tr>";
-        tr += "<td>mensaje : </td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
+        tr += "<td></td>" + "<td><b>" + myArr[i].nombre + "</b></td></tr>";
+        tr += "<td></td>" + "<td>" + myArr[i].titulo + "</td></tr>";
+        tr += "<td></td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
    
         tr += "<hr>";
         tbody.innerHTML += tr;
@@ -44,18 +44,13 @@ export default function HiloX() {
       for (var i = 0; i < myArr.length; i++) {
         var tr = "<tr >";
 
-        tr += "<td>Nombre : </td>" + "<td>" + myArr[i].publicador + "</td></tr>";
-        tr += "<td>mensaje : </td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
+        tr += "<td></td>" + "<td><b>" + myArr[i].publicador + "</b></td></tr>";
+        tr += "<td></td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
    
         tr += "<hr>";
         tbody.innerHTML += tr;
    }})
     .catch(err => console.log(err))
-
-
-
-
-
 
     var sendMessage=async function iniciarSesion(){
         console.log('button clicked');
@@ -84,25 +79,20 @@ export default function HiloX() {
         }
 
   return (
-
-
    <div className="Comunicate">
-    <h1>HILO {idToSearch}</h1>
-<table>
+<table className='font-menu'>
  <tbody id="demoHilo"></tbody>
 </table>
-<table>
+<table >
  <tbody id="listadoMsg"></tbody>
 </table>
-<form noValidate autoComplete="off" className="font-menu">
+<form id="boxTexto" noValidate autoComplete="off" className="font-menu">
 
-<TextareaAutosize id="txtMensaje"  label="Mensaje" />
+<TextareaAutosize  id="txtMensaje" label="Mensaje" />
 <br/>
-<Button className="font-menu" onClick={sendMessage}>Enviar</Button>
+<Button  className="font-menu" onClick={sendMessage}>Enviar</Button>
 <nav>
-
         <li><Link to='/'>Volver al listado de hilos</Link></li>
-
     </nav>
 </form>
 
