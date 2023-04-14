@@ -36,17 +36,17 @@ export default function HiloNuevo() {
      
   return (
    <div className="Comunicate">
-    <h1>¿En que estás pensando?</h1>
-<table className='font-menu'>
+    <h1 id="title" className="font-menu">¿En que estás pensando?</h1>
+<table  className='font-menu'>
  <tbody id="demoHilo"></tbody>
 </table>
 <table >
  <tbody id="listadoMsg"></tbody>
 </table>
 <form id="boxTexto" noValidate autoComplete="off" className="font-menu">
-    <h3>Titulo</h3>
+    <h3 className="lblTxt" >Titulo</h3>
 <TextareaAutosize id="txtTitulo" label="Titulo" />
-<h3>Mensaje</h3>
+<h3 className="lblTxt" >Mensaje</h3>
 <TextareaAutosize  id="txtMensaje" label="Mensaje" />
 <br/>
 <Button  className="font-menu" onClick={sendMessage}>Enviar</Button>

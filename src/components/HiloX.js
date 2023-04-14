@@ -27,7 +27,7 @@ export default function HiloX() {
         tr += "<td></td>" + "<td>" + myArr[i].titulo + "</td></tr>";
         tr += "<td></td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
    
-        tr += "<hr>";
+        tr += "<hr style='background-color: red'>";
         tbody.innerHTML += tr;
    }})
     .catch(err => console.log(err))
@@ -47,7 +47,7 @@ export default function HiloX() {
         tr += "<td></td>" + "<td><b>" + myArr[i].publicador + "</b></td></tr>";
         tr += "<td></td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
    
-        tr += "<hr>";
+
         tbody.innerHTML += tr;
    }})
     .catch(err => console.log(err))
@@ -80,15 +80,15 @@ export default function HiloX() {
 
   return (
    <div className="Comunicate">
-<table className='font-menu'>
+<table id="primeraTabla" className='font-menu'>
  <tbody id="demoHilo"></tbody>
 </table>
-<table >
+<table id="table2">
  <tbody id="listadoMsg"></tbody>
 </table>
 <form id="boxTexto" noValidate autoComplete="off" className="font-menu">
 
-<TextareaAutosize  id="txtMensaje" label="Mensaje" />
+<TextareaAutosize  placeholder='Escribir mensaje...' id="txtMensaje" label="Mensaje" />
 <br/>
 <Button  className="font-menu" onClick={sendMessage}>Enviar</Button>
 <nav>

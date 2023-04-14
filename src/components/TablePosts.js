@@ -65,10 +65,10 @@ export default function TablePosts() {
   for (var i = 0; i < myArr.length; i++) {
     var tr = "<tr>";
     var ide="myArr[i].id";
-    tr += "<td ></td>" + "<a href='/hilox'>"+myArr[i].id+ "</Link></tr>";
-    tr += "<td>Nombre : </td>" + "<td>" + myArr[i].nombre + "</td></tr>";
-    tr += "<td>Titulo : </td>" + "<td>" + myArr[i].titulo + "</td></tr>";
-    tr += "<td>Mensaje : </td>" + "<td>" + myArr[i].mensaje + "</td></tr>";
+    tr += "Saber más -> "+"<a class='idText' href='/hilox'>"+myArr[i].id+ "</Link></tr>";
+    tr += "" + "<td class='idText'><b>" + myArr[i].nombre + "</b></td></tr>";
+    tr += "" + "<td class='idText'><u>" + myArr[i].titulo + "</u></td></tr>";
+    tr += "" + "<td class='idText'>" + myArr[i].mensaje + "</td></tr>";
     tr += "<hr></div>";
     tbody.innerHTML +=tr; 
 }  
@@ -90,7 +90,7 @@ tbl.addEventListener('click', event => {
 return (
   <div className="Comunicate">
 <nav>
-        <li><Link to='/hilonuevo'>Crea tu propio hilo</Link></li>
+        <li><Link className="font-menu" id='creaHilo'to='/hilonuevo'>Crea tu propio hilo</Link></li>
     </nav>
 <table className='font-menu'>
 

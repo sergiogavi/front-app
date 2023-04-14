@@ -1,5 +1,66 @@
 #boxTexto{
     display: flex;
     flex-direction: column;
+    padding-top: 5px;
+}
+
+#title{
+ padding-top: 3%;
+ text-align: center;
+}
+
+.lblTxt{
+    text-align: center;
 
 }
+
+#txtMensaje{
+
+    background-color: #f0f8ff;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 300px;
+    line-height: 20px;
+}
+
+
+#txtMensaje:focus{
+
+    background-color: #335c80;
+    color: white;
+    font-size: 25px;
+    padding-top: 1%;
+}
+
+#listadoMsg{
+    background-color: #546d83;
+
+    color: white;
+}
+#table2{
+    background-color: white;
+    margin-top: 0.2%;
+}
+
+#primeraTabla{
+    margin-top: 1%;
+    background-color: aliceblue;
+    color: black
+}
+
+
+
+table#table2 tr:nth-child(odd)
+  {   
+    background-color:#1976d2;
+    color: white;
+
+  }
+
+  table#table2 tr:nth-child(even)
+  { 
+    background-color: aliceblue;
+    color: black
+  }

@@ -1,6 +1,7 @@
 .espaciadotoolbar{
    display: none;
    width: fit-content;
+   
 }
 .opciones{
 position:relative;
@@ -11,17 +12,24 @@ color: white;
 }
 
 table{
+   padding-top: 2%;
    width: 97%;
-   border-radius: 3%;
    margin-left: 2%;
-   font-size: large;
+   font-size: 20px;
    background-color: aliceblue;
+   border: 2px solid #1976d2;
+   
 }
 
-
+/*Titulo enlace que permite crear un nuevo hilo*/
+#creaHilo{
+   font-size: 25px;
+}
  
- 
-
+.idText{
+   font-size: 22px;
+   padding-left: 15px;
+}
  
 
  
