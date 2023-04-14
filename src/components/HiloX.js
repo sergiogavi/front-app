@@ -61,11 +61,13 @@ export default function HiloX() {
         console.log('button clicked');
 
         let datos = {};
+        datos.mensajeid=null;
         datos.id=idToSearch;
-        
-
-        datos.publicador = EmailUser ;
         datos.mensaje = document.getElementById('txtMensaje').value ;
+        if(EmailUser==null || EmailUser==undefined){EmailUser='prueba@debate.cat'}
+
+        datos.publicador = EmailUser;
+
     
           const request = await fetch('http://localhost:8080/api/sendMessage', {
             method: 'POST',
@@ -77,15 +79,8 @@ export default function HiloX() {
           });
           const respuesta = await request.text();
     
-            if(respuesta != 'FAIL') {
-                localStorage.token= respuesta;
-                localStorage.email = datos.email;
-              // window.location.reload();
-
-              }else{
-                alert("Las credenciales son incorrectas");
-            }
-    
+          console.log(datos);
+          window.location.reload();
         }
 
   return (
