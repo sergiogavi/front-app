@@ -33,7 +33,19 @@ export default function HiloNuevo() {
           const respuesta = await request.text();
           console.log(datos);
         }
-     
+        function onFileSelected(event) {
+          var selectedFile = event.target.files[0];
+          var reader = new FileReader();
+        
+          var imgtag = document.getElementById("myimage");
+          imgtag.title = selectedFile.name;
+        
+          reader.onload = function(event) {
+            imgtag.src = event.target.result;
+          };
+        
+          reader.readAsDataURL(selectedFile);
+        }
   return (
    <div className="Comunicate">
     <h1 id="title" className="font-menu">¿En que estás pensando?</h1>
@@ -48,11 +60,15 @@ export default function HiloNuevo() {
 <TextareaAutosize id="txtTitulo" label="Titulo" />
 <h3 className="lblTxt" >Mensaje</h3>
 <TextareaAutosize  id="txtMensaje" label="Mensaje" />
+<img id="myimage" height="200"></img>
 <br/>
+<input type="file" id='btBack'  onchange="onFileSelected(event)"></input>
 <Button  id='btBack' className="font-menu" onClick={sendMessage}>Enviar</Button>
+
 <nav>
         <li><Link id='btBack' to='/'>Volver al listado de hilos</Link></li>
     </nav>
+
 </form>
 
    </div>
