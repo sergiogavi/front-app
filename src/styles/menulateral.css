@@ -16,7 +16,8 @@ table{
    width: 97%;
    margin-left: 2%;
    font-size: 20px;
-   background-color: aliceblue;
+   background-color: #16181c;
+   color: white;
    border: 2px solid #1976d2;
    
 }
@@ -24,12 +25,25 @@ table{
 /*Titulo enlace que permite crear un nuevo hilo*/
 #creaHilo{
    font-size: 25px;
+   background-color: #0f527f;
+   color: white;
+   margin-bottom: 2%;
 }
- 
+#creaHilo:hover{
+   font-size: 25px;
+   color: #0f527f;
+   background-color: white;
+   margin-bottom: 2%;
+}
+
 .idText{
    font-size: 22px;
    padding-left: 15px;
 }
  
-
+#infoId{
+   padding-left: 15px;
+   padding-top: 15px;
+   background-color: #0f527f;
+}
  

@@ -90,9 +90,9 @@ export default function HiloX() {
 
 <TextareaAutosize  placeholder='Escribir mensaje...' id="txtMensaje" label="Mensaje" />
 <br/>
-<Button  className="font-menu" onClick={sendMessage}>Enviar</Button>
+<Button  id='btSend' className="font-menu" onClick={sendMessage}>Enviar</Button>
 <nav>
-        <li><Link to='/'>Volver al listado de hilos</Link></li>
+        <li ><Link id='btBack' to='/'>Volver al listado de hilos</Link></li>
     </nav>
 </form>
 

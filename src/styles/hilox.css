@@ -1,22 +1,33 @@
 #boxTexto{
     display: flex;
     flex-direction: column;
-    padding-top: 5px;
+    padding-top: 10px;
 }
-
+#btSend{
+    background-color:#0f527f;
+    color: white;
+    font-size: large;
+}
+#btBack{
+    background-color:#0f527f;
+    color: white;
+    font-size: large;
+}
 #title{
- padding-top: 3%;
+
  text-align: center;
+ background-color:#0f527f;
+ color: white;
 }
 
 .lblTxt{
     text-align: center;
-
+    background-color:#0f527f;
+    color: white;
 }
 
 #txtMensaje{
 
-    background-color: #f0f8ff;
     display: block;
     width: 100%;
     overflow: hidden;
@@ -28,7 +39,7 @@
 
 #txtMensaje:focus{
 
-    background-color: #335c80;
+    background-color:#0f527f;
     color: white;
     font-size: 25px;
     padding-top: 1%;
@@ -40,27 +51,27 @@
     color: white;
 }
 #table2{
+    background-color: #16181c;
     background-color: white;
     margin-top: 0.2%;
 }
 
 #primeraTabla{
-    margin-top: 1%;
-    background-color: aliceblue;
-    color: black
+    margin-top: 0%;
+    color: white;
+    background-color: #16181c;
 }
 
 
 
 table#table2 tr:nth-child(odd)
   {   
-    background-color:#1976d2;
     color: white;
-
+    background-color:#0f527f;
   }
 
   table#table2 tr:nth-child(even)
   { 
-    background-color: aliceblue;
-    color: black
+    color: white;
+    background-color: #16181c;
   }

@@ -49,9 +49,9 @@ export default function HiloNuevo() {
 <h3 className="lblTxt" >Mensaje</h3>
 <TextareaAutosize  id="txtMensaje" label="Mensaje" />
 <br/>
-<Button  className="font-menu" onClick={sendMessage}>Enviar</Button>
+<Button  id='btBack' className="font-menu" onClick={sendMessage}>Enviar</Button>
 <nav>
-        <li><Link to='/'>Volver al listado de hilos</Link></li>
+        <li><Link id='btBack' to='/'>Volver al listado de hilos</Link></li>
     </nav>
 </form>
 

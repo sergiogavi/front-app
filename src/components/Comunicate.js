@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AbreHilo from "./AbreHilo";
-
+import '../styles/home.css';
 export default function Comunicate() {
   let nombreDef;
   fetch("http://localhost:8080/api/prueba")
@@ -22,11 +22,15 @@ export default function Comunicate() {
   .catch(err => console.log(err))
   return (
     <div className="Comunicate">
- <table>
+ <table id='users'>
   <tbody id="demo"></tbody>
-  
 </table>
 
+<footer>
+  <p>Author: Sergio G<br/>
+</p>
+</footer>
     </div>
+    
   );
 }

@@ -65,7 +65,7 @@ export default function TablePosts() {
   for (var i = 0; i < myArr.length; i++) {
     var tr = "<tr>";
     var ide="myArr[i].id";
-    tr += "Saber más -> "+"<a class='idText' href='/hilox'>"+myArr[i].id+ "</Link></tr>";
+    tr += "<h5 id='infoId'>↓ Saber más </h5> "+"<a class='idText' href='/hilox'>"+myArr[i].id+ "</Link></tr>";
     tr += "" + "<td class='idText'><b>" + myArr[i].nombre + "</b></td></tr>";
     tr += "" + "<td class='idText'><u>" + myArr[i].titulo + "</u></td></tr>";
     tr += "" + "<td class='idText'>" + myArr[i].mensaje + "</td></tr>";
