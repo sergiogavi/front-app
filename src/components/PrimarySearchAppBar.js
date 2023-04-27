@@ -17,7 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Layout from "./Layout";
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, redirect } from "react-router-dom";
 import '../menuSuperior.css';
 var nombre= window.localStorage.getItem('email');
 /* 
@@ -43,6 +43,20 @@ const Search = styled('div')(({ theme }) => ({
 //Routing Menú principal
 
 const MenuOptions = () => {
+  const cerrarSesion = (event) => {
+
+    var answer = window.confirm("¿Seguro que quieres cerrar sesión?");
+    if (answer) {
+        //some code
+        localStorage.setItem("email", "DforoBate");
+        window.location.href ='/login';
+    }
+    else {
+        //some code
+    }
+
+    
+};
   return (
     <>
     <div id="linkpos" className="font-menu">
@@ -50,6 +64,7 @@ const MenuOptions = () => {
             <Link to="/" >Home</Link>
             <Link to="/usuarios" >Usuarios</Link>
             <Link to="/login" >Login</Link>
+            <button onClick={cerrarSesion}>Cerrar sesión</button>
             <Link to="/hilox"></Link>
       <a id="nombre">{nombre}</a>
       </nav>
@@ -93,6 +108,8 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);

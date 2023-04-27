@@ -11,6 +11,7 @@ export default function HiloX() {
     var EmailUser=localStorage.getItem("email");
     console.log(idToSearch);
 
+ 
 
     fetch("http://localhost:8080/api/getHilos/"+idToSearch)
     .then(response => response.text())
@@ -54,7 +55,13 @@ export default function HiloX() {
 
     var sendMessage=async function iniciarSesion(){
         console.log('button clicked');
-
+        var usuarioActivo=localStorage.getItem("email");
+        if(usuarioActivo=='DforoBate'){
+          alert("solo los miembros registrados pueden escribir mensajes");
+          window.location.href ='/';
+        }else{
+      
+        
         let datos = {};
         datos.mensajeid=null;
         datos.id=idToSearch;
@@ -77,7 +84,7 @@ export default function HiloX() {
           console.log(datos);
           window.location.reload();
         }
-
+      }
   return (
    <div className="Comunicate">
 <table id="primeraTabla" className='font-menu'>
